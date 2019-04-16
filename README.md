@@ -1,5 +1,7 @@
 # MoviesSite
 
+![Alt text](/images/ss1.png?raw=true "SS1")
+
 README
 Assignment 3
 TEAM JAMA

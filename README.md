@@ -1,4 +1,4 @@
-# MoviesSite
+# Movie Database
 
 ![Alt text](/images/ss1.png?raw=true "SS1")
 ![Alt text](/images/ss3.png?raw=true "SS3")

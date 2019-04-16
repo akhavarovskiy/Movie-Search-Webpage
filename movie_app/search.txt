@@ -1,0 +1,48 @@
+#JY#######################
+#multi-search
+'Lord of the Rings'         → 10 records
+#same as 
+title:'lord of the rings' OR plot:'lord of the rings' OR actors:'lord of the rings' 
+OR director:'lord of the rings' OR genre:'lord of the rings' OR tomato_score:'lord of the rings'
+
+#single field search
+title:'lord of the rings'   → 4 records
+
+#stop words: of , the 
+plot:'lord of the rings'    → 6 records
+#same as 
+plot:lord AND plot:rings    → 6 records
+
+actors:Harrison
+#match-> Harrison Ford, Rex Harrison
+
+# more stopworks, ngram
+plot:'in the'               → 0 record  , stopworks
+plot:Airpl                  → 48 record , ngrams
+#match Airplane, Airport
+plot:Airp                   → 48 record , ngrams
+#match Happy, Happen
+plot:Hap                    → 1317 record
+#ngram at least 3 characters
+plot:Ha                     → 0 record
+
+#sorted in descending order of tomato scores
+‘MATT DAMON'                   → 35 record
+#filter on tomato_score >=97
+'MATT DAMON' AND tomato_score:[97 TO]
+#filter on tomato_score 60 to 90
+'MATT DAMON' AND tomato_score:[69 TO 90]
+#exact match
+'MATT DAMON' AND tomato_score:98
+
+#works
+'MATT DAMON' AND tomato_score:[30 TO 40]
+#bug , give u everything
+'MATT DAMON' AND tomato_score:[7 TO 40]
+
+
+#field specific search
+‘Harrison'                      →229 records
+actors:Harrison'                → 181 records
+director:Harrison               → 28 records
+‘Harrison' Ford'                → 38 record

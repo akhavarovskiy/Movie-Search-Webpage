@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="../js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		$('.icon').click(function(){
+			$('.search').toggleClass('active');
+		});
+	});
+</script>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href= "{{ url_for('static',filename='styles/search.css') }}">
+		<title>Home</title>
+	</head>
+
+	<body>
+		<h1 style = "text-align: center; color: #000000AA; font-size: 200px; font: TeX Gyre Adventor;"> JAMA <h1>
+		<div class="search">
+				<form method="get" action="{{ url_for('results') }}">
+						<!--<label for="searchterm">What do you want to search for:</label> -->
+						<input type="text inactive" name="searchterm" placeholder="Enter a movie, actor or director name.">
+						<!--<input type="text"  name='test'/> -->
+						<div class="icon"></div>
+						<!-- <input type="submit" value="Search" /> -->
+				</form>	
+				<!--
+				<form method="get" action="{{ url_for('results') }}">
+					<label for="searchterm">What do you want to search for:</label>
+					<input type="text" name="searchterm" /><br />
+					<input type="text" name='test'/>
+					<input type="submit" value="Search" />
+
+				</form>	-->
+		</div>
+
+		<!--
+			<label for="searchterm">What do you want to search for:</label>
+			<input type="text" name="searchterm" /><br />
+			<input type="text" name='test'/>
+			<input type="submit" value="Search" />
+		-->
+		<!-- <a href="/my-link/">Hello World</a>-->
+	</body>	
+</html>
